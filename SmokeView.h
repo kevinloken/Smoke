@@ -7,11 +7,17 @@
 //
 
 #import <ScreenSaver/ScreenSaver.h>
+#import <OpenGL/gl.h>
+#import "TransparentOpenGLView.h"
 
-
-@interface SmokeView : ScreenSaverView 
+@interface ComStoneSanctuaryInteractive_SmokeView : ScreenSaverView 
 {
-
+	ComStoneSanctuaryInteractive_TransparentOpenGLView *glView;
+	//NSOpenGLView *glView;
+	GLfloat	rotation;
 }
 
+- (void)setUpOpenGL;
+
 @end
+

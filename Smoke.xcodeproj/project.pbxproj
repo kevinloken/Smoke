@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AF97D34130F0A0B00B45A03 /* Solver.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AF97D32130F0A0B00B45A03 /* Solver.h */; };
+		6AF97D35130F0A0B00B45A03 /* Solver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF97D33130F0A0B00B45A03 /* Solver.m */; };
+		6AF97D3C130F0A5300B45A03 /* Fluid.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AF97D3A130F0A5300B45A03 /* Fluid.h */; };
+		6AF97D3D130F0A5300B45A03 /* Fluid.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF97D3B130F0A5300B45A03 /* Fluid.m */; };
+		6AFBC534130EF5F600210B3A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFBC533130EF5F600210B3A /* Accelerate.framework */; };
+		6AFBC539130EF60800210B3A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFBC538130EF60800210B3A /* OpenGL.framework */; };
+		6AFBC53E130EF90200210B3A /* TransparentOpenGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AFBC53C130EF90200210B3A /* TransparentOpenGLView.h */; };
+		6AFBC53F130EF90200210B3A /* TransparentOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBC53D130EF90200210B3A /* TransparentOpenGLView.m */; };
 		8D255AC70486D3F9007BF209 /* Smoke_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* Smoke_Prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* SmokeView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* SmokeView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -22,6 +30,14 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* Smoke_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smoke_Prefix.pch; sourceTree = "<group>"; };
+		6AF97D32130F0A0B00B45A03 /* Solver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solver.h; sourceTree = "<group>"; };
+		6AF97D33130F0A0B00B45A03 /* Solver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Solver.m; sourceTree = "<group>"; };
+		6AF97D3A130F0A5300B45A03 /* Fluid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fluid.h; sourceTree = "<group>"; };
+		6AF97D3B130F0A5300B45A03 /* Fluid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fluid.m; sourceTree = "<group>"; };
+		6AFBC533130EF5F600210B3A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6AFBC538130EF60800210B3A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		6AFBC53C130EF90200210B3A /* TransparentOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentOpenGLView.h; sourceTree = "<group>"; };
+		6AFBC53D130EF90200210B3A /* TransparentOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentOpenGLView.m; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* Smoke.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Smoke.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* SmokeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmokeView.h; sourceTree = "<group>"; };
@@ -35,6 +51,8 @@
 			files = (
 				8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */,
 				8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */,
+				6AFBC534130EF5F600210B3A /* Accelerate.framework in Frameworks */,
+				6AFBC539130EF60800210B3A /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,8 +92,14 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6AF97D3A130F0A5300B45A03 /* Fluid.h */,
+				6AF97D3B130F0A5300B45A03 /* Fluid.m */,
+				6AF97D32130F0A0B00B45A03 /* Solver.h */,
+				6AF97D33130F0A0B00B45A03 /* Solver.m */,
 				F50079790118B23001CA0E54 /* SmokeView.h */,
 				F500797A0118B23001CA0E54 /* SmokeView.m */,
+				6AFBC53C130EF90200210B3A /* TransparentOpenGLView.h */,
+				6AFBC53D130EF90200210B3A /* TransparentOpenGLView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -85,6 +109,8 @@
 			children = (
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 				06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */,
+				6AFBC533130EF5F600210B3A /* Accelerate.framework */,
+				6AFBC538130EF60800210B3A /* OpenGL.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -123,6 +149,9 @@
 			files = (
 				8D255AC70486D3F9007BF209 /* Smoke_Prefix.pch in Headers */,
 				8D255AC80486D3F9007BF209 /* SmokeView.h in Headers */,
+				6AFBC53E130EF90200210B3A /* TransparentOpenGLView.h in Headers */,
+				6AF97D34130F0A0B00B45A03 /* Solver.h in Headers */,
+				6AF97D3C130F0A5300B45A03 /* Fluid.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D255ACC0486D3F9007BF209 /* SmokeView.m in Sources */,
+				6AFBC53F130EF90200210B3A /* TransparentOpenGLView.m in Sources */,
+				6AF97D35130F0A0B00B45A03 /* Solver.m in Sources */,
+				6AF97D3D130F0A5300B45A03 /* Fluid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,12 +285,16 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
+				PRODUCT_NAME = Smoke;
 				SDKROOT = macosx10.6;
+				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
 		};
@@ -267,11 +303,15 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
 				PREBINDING = NO;
+				PRODUCT_NAME = Smoke;
 				SDKROOT = macosx10.6;
+				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
 		};
