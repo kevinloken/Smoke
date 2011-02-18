@@ -13,8 +13,6 @@
 @interface ComStoneSanctuaryInteractive_SmokeView : ScreenSaverView 
 {
 	ComStoneSanctuaryInteractive_TransparentOpenGLView *glView;
-	//NSOpenGLView *glView;
-	GLfloat	rotation;
 }
 
 - (void)setUpOpenGL;

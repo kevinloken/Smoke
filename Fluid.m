@@ -10,6 +10,7 @@
 #import "Solver.h" /* external definitions (from solver.m) */
 
 #import <OpenGL/gl.h>
+#import <OpenGL/glu.h>
 
 #import <Accelerate/Accelerate.h>
 
@@ -88,6 +89,8 @@ static void free_data ( void )
 
 void clear_data ( void )
 {
+	NSLog(@"Clearing data");
+	
 	const int size=(N+2)*(N+2);
 	
 /*
@@ -116,7 +119,7 @@ void clear_data ( void )
 
 static void draw_velocity ( void )
 {
-	/*
+
 	int i, j;
 	float x, y, h;
 	
@@ -138,11 +141,12 @@ static void draw_velocity ( void )
 	}
 	
 	glEnd ();
-	 */
+
 }
 
 static void draw_density ( void )
 {
+	/*
 	static GLfloat *vertexBuffer = NULL;
 	static GLfloat *colorBuffer = NULL;
 	
@@ -230,6 +234,33 @@ static void draw_density ( void )
 	glVertexPointer(2, GL_FLOAT, 0, vertexBuffer);
 	glColorPointer(4, GL_FLOAT, 0, colorBuffer);
 	glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+	 */
+	int i, j;
+	float x, y, h, d00, d01, d10, d11;
+	
+	h = 1.0f/N;
+	
+	glBegin ( GL_QUADS );
+	
+	for ( i=0 ; i<=N ; i++ ) {
+		x = (i-0.5f)*h;
+		for ( j=0 ; j<=N ; j++ ) {
+			y = (j-0.5f)*h;
+			
+			d00 = dens[IX(i,j)];
+			d01 = dens[IX(i,j+1)];
+			d10 = dens[IX(i+1,j)];
+			d11 = dens[IX(i+1,j+1)];
+			
+			glColor4f ( d00, d00, d00, 1.0 ); glVertex2f ( x, y );
+			glColor4f ( d10, d10, d10, 1.0 ); glVertex2f ( x+h, y );
+			glColor4f ( d11, d11, d11, 1.0 ); glVertex2f ( x+h, y+h );
+			glColor4f ( d01, d01, d01, 1.0 ); glVertex2f ( x, y+h );
+		}
+	}
+	
+	glEnd ();	
+	
 }
 
 /*
@@ -304,6 +335,7 @@ void key_func ( unsigned char key, int x, int y )
 
 void mouse_func ( int button, int state, int x, int y )
 {
+	NSLog(@"mouse_func( %d, %d, %d, %d)", button, state, x, y);
 	omx = mx = x;
 	omx = my = y;
 	
@@ -312,6 +344,8 @@ void mouse_func ( int button, int state, int x, int y )
 
 void motion_func ( int x, int y )
 {
+	NSLog(@"motion_func( %d, %d)", x, y);
+	
 	mx = x;
 	my = y;
 }
@@ -319,6 +353,8 @@ void motion_func ( int x, int y )
 
 void idle_func ( void )
 {
+	NSLog(@"Idle function");
+	
 	get_from_UI ( dens_prev, u_prev, v_prev );
 	vel_step ( N, u, v, u_prev, v_prev, visc, dt );
 	dens_step ( N, dens, dens_prev, u, v, diff, dt );
@@ -326,14 +362,14 @@ void idle_func ( void )
 
 void display_func ( void )
 {	
-	/*
+	NSLog(@"Display function....");
+	
 	 glViewport ( 0, 0, win_x, win_y );
 	 glMatrixMode ( GL_PROJECTION );
 	 glLoadIdentity ();
-	 // gluOrtho2D ( 0.0, 1.0, 0.0, 1.0 );
-	 glOrthof(0.0f, 1.0f, 0.0f, 1.0f, -1.0, 1.0);
+	 gluOrtho2D ( 0.0, 1.0, 0.0, 1.0 );
 	 glClearColor ( 0.0f, 0.0f, 0.0f, 1.0f );
-	 */
+
 	glClear ( GL_COLOR_BUFFER_BIT );	
 	
 	if ( dvel ) draw_velocity ();
@@ -350,7 +386,8 @@ void display_func ( void )
 
 void setupSolver(int width, int height)
 {
-	N = 128;
+	 N = 256;
+	// N = ( width < height ) ? width : height;
 	dt = 0.1f;
 	diff = 0.0f;
 	visc = 0.0f;
@@ -364,5 +401,23 @@ void setupSolver(int width, int height)
 	
 	win_x = width;
 	win_y = height;	
+	/*
+	 NSLog(@"Filling with default data");
+	for ( int i = 1; i <= N; i++ )
+	{
+		for ( int j = 1; j <= N; j++ )
+		{
+			dens[IX(i,j)] = (float)j/(float)N;
+		}
+	}
+	 */
+}
+
+int viewWidth() {
+	return win_x;
+}
+
+int viewHeight() {
+	return win_y;
 }
 

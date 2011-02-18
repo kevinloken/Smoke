@@ -21,15 +21,15 @@
     return self;
 }
 
+/*
 - (void)drawRect:(NSRect)dirtyRect {
     // Drawing code here.
 	[super drawRect:dirtyRect];
 }
-
+*/
 
 - (BOOL)isOpaque
 {
-	NSLog(@"returning NO from isOpaque");
 	return NO;
 }
 
